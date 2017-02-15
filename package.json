@@ -1,0 +1,21 @@
+{
+  "name": "el_capo_money",
+  "version": "1.0.0",
+  "description": "A little JavaScript branger powering some #channel things in LaFamiliaRuiz Slack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "family",
+    "slack",
+    "bespoke"
+  ],
+  "author": "Roger Steve Ruiz <hi@rog.gr>",
+  "license": "MIT",
+  "dependencies": {
+    "@slack/client": "^3.6.0",
+    "dotenv-safe": "^2.3.3"
+  }
+}
