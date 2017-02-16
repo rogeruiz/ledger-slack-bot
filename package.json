@@ -15,7 +15,8 @@
   "author": "Roger Steve Ruiz <hi@rog.gr>",
   "license": "MIT",
   "dependencies": {
-    "@slack/client": "^3.6.0",
-    "dotenv-safe": "^2.3.3"
+    "dotenv-safe": "^2.3.3",
+    "ledger-cli": "^0.2.0",
+    "request": "^2.79.0"
   }
 }

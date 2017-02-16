@@ -1,17 +1,23 @@
 require( 'dotenv-safe' ).load()
-const RtmClient = require( '@slack/client' ).RtmClient
-const RTM_CLIENT_EVENTS = require( '@slack/client' ).CLIENT_EVENTS.RTM
-const token = process.env.SLACK_API_TOKEN
-const channelId = process.env.SLACK_CHANNEL_ID
-const rtm = new RtmClient( token )
 const dollars = require( './lib/get-money' )
+const request = require( 'request' )
+const url = 'https://slack.com/api/chat.postMessage'
+var data = {
+  token: process.env.SLACK_API_TOKEN,
+  channel: process.env.SLACK_CHANNEL_ID,
+  as_user: true,
+  pretty: 0,
+}
 
-rtm.start()
-rtm.on( RTM_CLIENT_EVENTS.RTM_CONNECTION_OPENED, function () {
-  dollars.balance( function ( message ) {
-    rtm.sendMessage( message, channelId, function() {
-      console.log( 'message sent, shutting down @el_capo' )
-      process.exit( 0 )
-    } )
+dollars.balance( function ( message ) {
+  data.attachments = JSON.stringify( message )
+  request( { url: url, qs: data }, function ( error, response, body ) {
+    if ( error ) {
+      console.log( error )
+      process.exit( 99 )
+    }
+    console.log( `API status: ${ response.statusCode }` )
+    console.log( `API response: ${ response.body }` )
+    process.exit( 0 )
   } )
 } )
