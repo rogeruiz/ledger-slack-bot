@@ -12,7 +12,7 @@ var data = {
 
 dollars.balance( function ( message ) {
   data.attachments = JSON.stringify( message )
-  request( { url: url, qs: data }, function ( error, response, body ) {
+  request( { url: url, qs: data }, function ( error, response/**, body*/ ) {
     if ( error ) {
       debug( error )
       process.exit( 99 )
