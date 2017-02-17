@@ -6,6 +6,7 @@ const url = 'https://slack.com/api/chat.postMessage'
 var data = {
   token: process.env.SLACK_API_TOKEN,
   channel: process.env.SLACK_CHANNEL_ID,
+  text: 'Updates from Ledger :bank: :money_with_wings:',
   as_user: true,
   pretty: 0,
 }
