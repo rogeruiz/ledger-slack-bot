@@ -1,16 +1,16 @@
 {
-  "name": "el_capo_money",
+  "name": "ledger-slack-bot",
   "version": "1.0.0",
-  "description": "A little JavaScript branger powering some #channel things in LaFamiliaRuiz Slack",
+  "description": "A ledger-cli powered Slack bot.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "DEBUG=get-money,request node index.js"
   },
   "keywords": [
-    "family",
     "slack",
-    "bespoke"
+    "ledger-cli",
+    "ledger"
   ],
   "author": "Roger Steve Ruiz <hi@rog.gr>",
   "license": "MIT",
