@@ -23,7 +23,7 @@ dollars.balance( function ( message ) {
     dollars.
       lastMonth( 'Groceries' ).
       then( function ( d ) {
-        data.attachments = JSON.stringify( [ d ] )
+        data.attachments = JSON.stringify( d )
         request( { url: url, qs: data }, function ( error, response ) {
           if ( error ) {
             debug( error )
